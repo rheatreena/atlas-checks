@@ -177,10 +177,10 @@ public class FloatingEdgeCheck extends BaseCheck<Long>
                 && edge.length().isLessThanOrEqualTo(this.maximumDistance)
                 && this.hasNoConnectedEdges(edge) && this.isNotOnSyntheticBoundary(edge)
                 && (!this.checkConstructionRoad || ((Edge) object).connectedNodes().stream()
-                .noneMatch(node -> node.getAtlas()
-                        .linesContaining(node.getLocation(), line -> Validators
-                                .isOfType(line, HighwayTag.class, HighwayTag.CONSTRUCTION))
-                        .iterator().hasNext())))
+                        .noneMatch(node -> node.getAtlas()
+                                .linesContaining(node.getLocation(), line -> Validators
+                                        .isOfType(line, HighwayTag.class, HighwayTag.CONSTRUCTION))
+                                .iterator().hasNext())))
         {
             // return a flag created using the object and the flag that was either defined in the
             // configuration or above.
